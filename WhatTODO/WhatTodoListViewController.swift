@@ -14,6 +14,8 @@ class WhatTodoListViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
+    
     // Task 추가 제거, Tab Bar Controller
     // Data 관리 - NSCoding, Property List, Serialization, Core Data, Realm 등등
     // 적고 덜 복잡한 데이터 관리 -> NSCoding, Peroperty List
@@ -26,4 +28,14 @@ class WhatTodoListViewController: UIViewController {
 
 extension WhatTodoListViewController {
     
+}
+
+// header View 클래스
+class WhatTodoListHeaderView: UICollectionReusableView {
+    
+    @IBOutlet weak var sectionTitleLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
 }

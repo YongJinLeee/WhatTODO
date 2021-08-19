@@ -27,14 +27,14 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="kAN-JE-ciX">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="kAN-JE-ciX" customClass="WhatTodoListCell" customModule="WhatTODO" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="414" height="90"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="h84-IM-HOL">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qft-ea-zRH" userLabel="check">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qft-ea-zRH" userLabel="checkIcon">
                                                     <rect key="frame" x="20" y="27.666666666666671" width="35" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="35" id="rFB-gd-0A0"/>
@@ -83,9 +83,16 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="414" height="90"/>
+                                        <connections>
+                                            <outlet property="cancelLineThroughView" destination="WkF-5O-ReW" id="eaj-qr-DAD"/>
+                                            <outlet property="cancelLineThroughWidth" destination="tfi-lK-fH0" id="oVW-Cj-fig"/>
+                                            <outlet property="checkIcon" destination="qft-ea-zRH" id="nRD-lp-sTF"/>
+                                            <outlet property="deleteButton" destination="PpQ-XU-N9N" id="vCc-kK-qB8"/>
+                                            <outlet property="descriptionsLabel" destination="mOe-Jf-pMM" id="anc-WO-sHx"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="zOS-c0-UOO">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="zOS-c0-UOO" customClass="WhatTodoListHeaderView" customModule="WhatTODO" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
@@ -100,6 +107,9 @@
                                         <constraint firstItem="IVM-2u-9El" firstAttribute="centerY" secondItem="zOS-c0-UOO" secondAttribute="centerY" id="Uk4-Vs-5fi"/>
                                         <constraint firstItem="IVM-2u-9El" firstAttribute="leading" secondItem="zOS-c0-UOO" secondAttribute="leading" constant="20" id="Uty-fJ-1N0"/>
                                     </constraints>
+                                    <connections>
+                                        <outlet property="sectionTitleLabel" destination="IVM-2u-9El" id="dqS-Bh-uYz"/>
+                                    </connections>
                                 </collectionReusableView>
                             </collectionView>
                         </subviews>
