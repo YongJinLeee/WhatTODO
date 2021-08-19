@@ -15,4 +15,8 @@ class WhatTodoListCell: UICollectionViewCell {
     @IBOutlet weak var cancelLineThroughView: UIView!
     
     @IBOutlet weak var cancelLineThroughWidth: NSLayoutConstraint!
+    
+    
+    
+    
 }

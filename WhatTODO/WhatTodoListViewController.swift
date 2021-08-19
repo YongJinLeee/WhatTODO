@@ -28,6 +28,15 @@ class WhatTodoListViewController: UIViewController {
 
 extension WhatTodoListViewController {
     
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        // TODO: 커스텀 셀
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WhatTodoListCell", for: indexPath) as? WhatTodoListCell else {
+            return UICollectionViewCell()
+        }
+        return cell
+        
+        return cell
+    
 }
 
 // header View 클래스
