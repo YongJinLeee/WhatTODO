@@ -15,7 +15,6 @@ class WhatTodoListViewController: UIViewController {
     }
     
     
-    
     // Task 추가 제거, Tab Bar Controller
     // Data 관리 - NSCoding, Property List, Serialization, Core Data, Realm 등등
     // 적고 덜 복잡한 데이터 관리 -> NSCoding, Peroperty List
@@ -28,8 +27,19 @@ class WhatTodoListViewController: UIViewController {
 
 extension WhatTodoListViewController {
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        // 섹션 수 설정 - Today, UpComming
+        return 2
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        // 섹선 내 아이템 수 -> 생성하는 대로되도록
+        return 10 // 임시
+    }
+    
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        // TODO: 커스텀 셀
+        // 셀 재사용
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WhatTodoListCell", for: indexPath) as? WhatTodoListCell else {
             return UICollectionViewCell()
         }
@@ -46,5 +56,6 @@ class WhatTodoListHeaderView: UICollectionReusableView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        }
     }
 }
