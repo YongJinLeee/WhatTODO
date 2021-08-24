@@ -51,10 +51,11 @@ class ListManager {
     
     // 선택 혹은 del버튼 눌린 노드 삭제 (del 핸들러에는 해당 노드 id가 전달되어야)
     func deleteTodo(_ task: TodoData) {
-        if let currentId = tasks.firstIndex(of: task) { // 삭제할 할일 노드의 아이디 검출
-            tasks.remove(at: currentId)
-            // 공식 문서에서는 복잡도가 O(n)
-            // filter closure 사용..?
+        // tasks의 배열에서 id 일치 하지 않는 노드만 추려 배열 재구성
+        tasks = tasks.filter { existingTodo in
+            return existingTodo.id != task.id
         }
+        
     }
+
 }
