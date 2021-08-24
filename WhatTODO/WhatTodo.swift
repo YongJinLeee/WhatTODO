@@ -60,5 +60,12 @@ class ListManager {
 // 축약
 // 복잡도에서 if ~ firstIndex 보다 filter가 우위에 있음. 대용량 자료 처리까지 고려
     }
+    // 배열에 새로운 index 감지되면 구조체 업데이트
+    func updateTodo(_ task: TodoData) {
+        guard let index = tasks.firstIndex(of: task) else {
+            return
+        }
+        tasks[index].DataUpdate(isDone: false, detailMSG: task.detailMSG, isToday: task.isToday)
+    }
 
 }
