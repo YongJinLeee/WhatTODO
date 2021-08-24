@@ -16,7 +16,16 @@ class WhatTodoListCell: UICollectionViewCell {
     
     @IBOutlet weak var cancelLineThroughWidth: NSLayoutConstraint!
     
+    var doneBtnTapHandler: ((Bool) -> Void)?
+    var delBtnTapHandler: (() -> Void)?
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+    }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+    }
     
 }
