@@ -14,7 +14,9 @@ class WhatTodoListViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
     // Task 추가 제거, Tab Bar Controller
     // Data 관리 - NSCoding, Property List, Serialization, Core Data, Realm 등등
     // 적고 덜 복잡한 데이터 관리 -> NSCoding, Peroperty List
@@ -57,5 +59,13 @@ class WhatTodoListHeaderView: UICollectionReusableView {
     override func awakeFromNib() {
         super.awakeFromNib()
         }
+    }
+}
+// cell 사이즈 조정
+extension WhatTodoListViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width: CGFloat = collectionView.bounds.width
+        let height: CGFloat = 50
+        return CGSize(width: width, height: height)
     }
 }
