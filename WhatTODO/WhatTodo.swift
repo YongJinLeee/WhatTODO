@@ -38,7 +38,7 @@ class ListManager {
     
     func createTodo(detailMSG: String, isToday: Bool) -> TodoData {
         // 신규 id 부여 및 다음 노드 아이디 변수 재할당
-        var nextId: Int = ListManager.lastId + 1
+        let nextId: Int = ListManager.lastId + 1
         ListManager.lastId = nextId
             
         return TodoData(id: nextId, isDone: false, detailMSG: detailMSG, isToday: isToday)
@@ -52,10 +52,13 @@ class ListManager {
     // 선택 혹은 del버튼 눌린 노드 삭제 (del 핸들러에는 해당 노드 id가 전달되어야)
     func deleteTodo(_ task: TodoData) {
         // tasks의 배열에서 id 일치 하지 않는 노드만 추려 배열 재구성
-        tasks = tasks.filter { existingTodo in
-            return existingTodo.id != task.id
-        }
+        tasks = tasks.filter { $0.id != task.id }
         
+//        tasks = tasks.filter { existingTodo in
+//            return existingTodo.id != task.id
+//        }
+// 축약
+// 복잡도에서 if ~ firstIndex 보다 filter가 우위에 있음. 대용량 자료 처리까지 고려
     }
 
 }
