@@ -12,4 +12,4 @@ Data 관리 - NSCoding, Property List, Serialization, Core Data, Realm 등등
 ```
 
 데이터 관리는 JSON으로 진행하고,
-codable protocol은 https://babbab2.tistory.com/61 에서 참고하여 코딩했습니다.
+codable protocol은 https://babbab2.tistory.com/61 에서 참고하여 구성했습니다.
