@@ -65,10 +65,11 @@ class WhatTodoListCell: UICollectionViewCell {
         deleteButton.isHidden = !isDone // 반대 관계 (true: 숨김 / false: 보임)
         
         // 실제 data 변경할 핸들러
+        // Business Logic과 분리하기 위함
         doneBtnTapHandler?(isDone)
     }
     func deleteBtnTapped(_ sender: Any) {
-        // 탭이 되었다는 사실만 핸들러에 담고, 실제 연산은 외부에서 이루어지도록 구현
+        // 탭이 되었다는 사실만 핸들러에 담고, 실제 연산(Business Logic)은 외부에서 이루어지도록 구현
         delBtnTapHandler?()
     }
 }

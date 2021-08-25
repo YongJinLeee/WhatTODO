@@ -111,7 +111,7 @@
                                         <constraint firstItem="IVM-2u-9El" firstAttribute="leading" secondItem="zOS-c0-UOO" secondAttribute="leading" constant="20" id="Uty-fJ-1N0"/>
                                     </constraints>
                                     <connections>
-                                        <outlet property="sectionTitleLabel" destination="IVM-2u-9El" id="dqS-Bh-uYz"/>
+                                        <outlet property="sectionTitleLabel" destination="IVM-2u-9El" id="Q8X-ne-PQP"/>
                                     </connections>
                                 </collectionReusableView>
                             </collectionView>
