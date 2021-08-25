@@ -18,6 +18,7 @@
 		4C4B4ACC26C6BDEC00AC6791 /* WhatTODOUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4B4ACB26C6BDEC00AC6791 /* WhatTODOUITests.swift */; };
 		4C4B4ADA26CE514E00AC6791 /* WhatTodoListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4B4AD926CE514E00AC6791 /* WhatTodoListCell.swift */; };
 		4C4B4ADC26D5356D00AC6791 /* WhatTodo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4B4ADB26D5356D00AC6791 /* WhatTodo.swift */; };
+		4C4B4ADE26D68DCF00AC6791 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4B4ADD26D68DCF00AC6791 /* Storage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		4C4B4ACD26C6BDEC00AC6791 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C4B4AD926CE514E00AC6791 /* WhatTodoListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatTodoListCell.swift; sourceTree = "<group>"; };
 		4C4B4ADB26D5356D00AC6791 /* WhatTodo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatTodo.swift; sourceTree = "<group>"; };
+		4C4B4ADD26D68DCF00AC6791 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				4C4B4AB726C6BDEC00AC6791 /* Info.plist */,
 				4C4B4AAF26C6BDEA00AC6791 /* WhatTODO.xcdatamodeld */,
 				4C4B4ADB26D5356D00AC6791 /* WhatTodo.swift */,
+				4C4B4ADD26D68DCF00AC6791 /* Storage.swift */,
 			);
 			path = WhatTODO;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C4B4AAB26C6BDEA00AC6791 /* WhatTodoListViewController.swift in Sources */,
+				4C4B4ADE26D68DCF00AC6791 /* Storage.swift in Sources */,
 				4C4B4AA726C6BDEA00AC6791 /* AppDelegate.swift in Sources */,
 				4C4B4AA926C6BDEA00AC6791 /* SceneDelegate.swift in Sources */,
 				4C4B4AB126C6BDEA00AC6791 /* WhatTODO.xcdatamodeld in Sources */,
