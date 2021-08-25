@@ -16,6 +16,8 @@ class WhatTodoListCell: UICollectionViewCell {
     
     @IBOutlet weak var cancelLineThroughWidth: NSLayoutConstraint!
     
+    // 각 버튼의 동작 핸들러 함수
+    // 동작 여부를 외부로 부터 받아 수행 (ViewModel) -> 구현은 해당 코드 바깥에서 되도록 설계
     var doneBtnTapHandler: ((Bool) -> Void)?
     var delBtnTapHandler: (() -> Void)?
     
@@ -27,5 +29,14 @@ class WhatTodoListCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
     }
+    
+    func updateUI(task: TodoData) {
+        checkIcon.isSelected = task.isDone
+        descriptionsLabel.text = task.detailMSG
+        descriptionsLabel.alpha = task.isDone ? 0.2 : 1  // 투명도
+        deleteButton.isHidden = task.isDone == false
+        
+    }
+    
     
 }

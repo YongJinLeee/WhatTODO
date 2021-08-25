@@ -2,7 +2,7 @@
 //  WhatTodo.swift
 //  WhatTODO
 //
-//  Created by LeeYongJin on 2021/08/24.
+//  Created by LeeYongJin
 //
 
 import UIKit
@@ -62,10 +62,12 @@ class ListManager {
     }
     // 배열에 새로운 index 감지되면 구조체 업데이트
     func updateTodo(_ task: TodoData) {
-        guard let index = tasks.firstIndex(of: task) else {
-            return
-        }
+        guard let index = tasks.firstIndex(of: task) else { return }
         tasks[index].DataUpdate(isDone: false, detailMSG: task.detailMSG, isToday: task.isToday)
     }
 
+}
+
+class WhatTodoViewModel {
+    
 }
