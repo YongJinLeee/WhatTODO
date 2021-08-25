@@ -11,4 +11,5 @@ Data 관리 - NSCoding, Property List, Serialization, Core Data, Realm 등등
 최근 사용 경향은 Codable(Swift4에 추가, NSCoding보다는 덜 복잡하고 더 직관적이며, JSON Encoding & Decoding 프로토콜 준수)
 ```
 
-
+데이터 관리는 JSON으로 진행하고,
+codable protocol은 https://babbab2.tistory.com/61 에서 참고하여 코딩했습니다.
