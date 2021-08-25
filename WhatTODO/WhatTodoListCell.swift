@@ -72,3 +72,12 @@ class WhatTodoListCell: UICollectionViewCell {
         delBtnTapHandler?()
     }
 }
+// section분할시마다 Object사용을 위한 ReusableView class
+class WhatTodoListHeaderView: UICollectionReusableView {
+    
+    @IBOutlet weak var sectionTitleLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+}
