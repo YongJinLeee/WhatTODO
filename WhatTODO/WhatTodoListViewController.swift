@@ -111,16 +111,25 @@ extension WhatTodoListViewController: UICollectionViewDataSource {
         }
         
         return cell
+    }
     
-}
-
-// header View 클래스
-class WhatTodoListHeaderView: UICollectionReusableView {
-    
-    @IBOutlet weak var sectionTitleLabel: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    // headerView (section title)
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            guard let header =  collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "WhatTodoListHeaderView", for: indexPath) as? WhatTodoListHeaderView else {
+                return UICollectionReusableView()
+            }
+            
+            guard let section = WhatTodoViewModel.Section(rawValue: indexPath.section) else {
+                return UICollectionReusableView()
+            }
+            
+            header.sectionTitleLabel.text = section.title
+            return header
+            
+        default:
+            return UICollectionReusableView()
         }
     }
 }

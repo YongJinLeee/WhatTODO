@@ -99,10 +99,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IVM-2u-9El">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="WhatTodoListHeaderView" text="Today!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IVM-2u-9El">
                                             <rect key="frame" x="20" y="10.666666666666664" width="76" height="29"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                            <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -111,14 +110,14 @@
                                         <constraint firstItem="IVM-2u-9El" firstAttribute="leading" secondItem="zOS-c0-UOO" secondAttribute="leading" constant="20" id="Uty-fJ-1N0"/>
                                     </constraints>
                                     <connections>
-                                        <outlet property="sectionTitleLabel" destination="IVM-2u-9El" id="Q8X-ne-PQP"/>
+                                        <outlet property="sectionTitleLabel" destination="IVM-2u-9El" id="EM6-dK-05h"/>
                                     </connections>
                                 </collectionReusableView>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Me-IC-lCq">
                                 <rect key="frame" x="0.0" y="753" width="414" height="60"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Todo...?" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SCi-d0-Gxh">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="할일쓰세요 왜 안올라가니" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SCi-d0-Gxh">
                                         <rect key="frame" x="8" y="13" width="289" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
