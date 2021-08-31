@@ -66,7 +66,14 @@ extension WhatTodoListViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // 섹선 내 아이템 수 -> 생성하는 대로되도록
-        return WhatTodoListViewModel.todaysTask.count
+        if section == 0 {
+            // 첫 번째 섹션 내 아이템 수 (0번)
+            return WhatTodoListViewModel.todaysTask.count
+        } else {
+            return WhatTodoListViewModel.upcomingTasks.count
+        }
+        // 개선점 : 추후 섹션을 더 분리할 수 있는 기능을 추가하면 수정 필요함
+        
     }
     
     
