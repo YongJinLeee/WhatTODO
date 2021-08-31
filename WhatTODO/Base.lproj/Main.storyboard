@@ -12,7 +12,7 @@
         <!--Tasks-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WhatTODO" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WhatTodoListViewController" customModule="WhatTODO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -175,6 +175,12 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Tasks" image="square.and.pencil" catalog="system" id="lXe-8R-cb6"/>
+                    <connections>
+                        <outlet property="addTaskBtn" destination="9Tp-gE-yE5" id="368-xb-kd6"/>
+                        <outlet property="collectionView" destination="MbA-XL-dBD" id="lIu-4E-Wwu"/>
+                        <outlet property="inputTextField" destination="SCi-d0-Gxh" id="90u-dw-M1u"/>
+                        <outlet property="isTodayBtn" destination="c0b-KS-GcG" id="bVb-XF-qi6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
