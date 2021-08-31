@@ -65,9 +65,69 @@ class ListManager {
         guard let index = tasks.firstIndex(of: task) else { return }
         tasks[index].DataUpdate(isDone: false, detailMSG: task.detailMSG, isToday: task.isToday)
     }
+    
+    // 업데이트된 구조체 Directory화 및 json 파일 저장
+    func saveTodo() {
+        Storage.store(tasks, to: .documents, as: "tasks.json")
+    }
+    
+    // 저장된 파일 불러오기 (앱 재시작, 백그라운드에서 재시작 등 다시 호출 할 상황)
+    func retriveTodo() {
+       tasks = Storage.retrive("tasks.json", from: .caches, as: [TodoData].self) ?? []
+        
+        let lastId =  tasks.last?.id ?? 0
+        ListManager.lastId = lastId
+    }
 
 }
-
+// ListManager 메소드로 WhatTodoList View를 컨트롤하는 class
 class WhatTodoViewModel {
     
+    enum Section: Int, CaseIterable {
+        case today
+        case upcoming
+        
+        var title: String {
+            switch self {
+            case .today: return "Today"
+            default: return "Upcoming"
+            }
+        }
+    }
+    
+    private let manager = ListManager.shared
+    
+    // 해당 cell의 task 정보가 담긴 TodoData 호출
+    var tasks: [TodoData] {
+        return manager.tasks
+    }
+    
+    // isToday Bool 값에 따라 위치할 섹션 분할
+    var todaysTask: [TodoData] {
+        return tasks.filter { $0.isToday == true }
+    }
+    var upcomingTasks: [TodoData] {
+        return tasks.filter { $0.isToday == false }
+    }
+    
+    //섹션 개수
+    var numOfSection: Int {
+        return Section.allCases.count
+    }
+    
+    func addTodo(_ task: TodoData) {
+        manager.addTodo(task)
+    }
+    
+    func deleteTodo(_ task: TodoData) {
+        manager.deleteTodo(task)
+    }
+    
+    func updateTodo(_ task: TodoData) {
+        manager.updateTodo(task)
+    }
+    
+    func loadTodo() {
+        manager.retriveTodo()
+    }
 }
