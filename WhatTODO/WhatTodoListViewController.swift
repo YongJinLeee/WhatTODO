@@ -78,11 +78,28 @@ extension WhatTodoListViewController: UICollectionViewDataSource {
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        // 셀 재사용
+        // section 내 data 담을 custom cell 호출
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WhatTodoListCell", for: indexPath) as? WhatTodoListCell else {
             return UICollectionViewCell()
         }
-        return cell
+        var tasks: TodoData
+        if indexPath.section == 0 {
+            tasks = WhatTodoListViewModel.todaysTask[indexPath.item]
+        } else {
+            tasks = WhatTodoListViewModel.upcomingTasks[indexPath.item]
+        }
+        // 셀 정보 업데이트
+        cell.updateUI(task: tasks)
+        
+        cell.doneBtnTapHandler = { isdone in tasks.isDone = isdone
+            self.WhatTodoListViewModel.updateTodo(tasks)
+            self.collectionView.reloadData()
+        }
+        
+        cell.deleteBtnTapped {
+            self.WhatTodoListViewModel.deleteTodo(tasks)
+            self.collectionView.reloadData()
+        }
         
         return cell
     
