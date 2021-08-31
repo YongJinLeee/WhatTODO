@@ -23,6 +23,12 @@ class WhatTodoListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // 키보드 호출 감지
+        NotificationCenter.default.addObserver(self, selector: #selector(adjstInputView), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(adjstInputView), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        // json 파일 파싱 및 호출
+        WhatTodoListViewModel.loadTodo()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -76,7 +82,6 @@ extension WhatTodoListViewController: UICollectionViewDataSource {
         
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // section 내 data 담을 custom cell 호출
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WhatTodoListCell", for: indexPath) as? WhatTodoListCell else {
@@ -121,5 +126,28 @@ extension WhatTodoListViewController: UICollectionViewDelegateFlowLayout {
         let width: CGFloat = collectionView.bounds.width
         let height: CGFloat = 50
         return CGSize(width: width, height: height)
+    }
+}
+
+// 키보드 감지 및 키보드 높이에 따른 텍스트 필드 인풋뷰 높이 조절 관련
+extension WhatTodoListViewController {
+    @objc private func adjstInputView(notify: Notification) {
+        guard let userInfo = notify.userInfo else {
+            return
+        }
+        // 키보드 올라 왔을때 위치와 사이즈 정보 받기
+        guard let keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+            return
+        }
+        
+        if notify.name == UIResponder.keyboardWillShowNotification {
+            //노치 인셋
+            let adjustmentHeight = keyboardFrame.height - view.safeAreaInsets.bottom
+            inputViewBottom.constant = adjustmentHeight
+        } else {
+            inputViewBottom.constant = 0
+        }
+        //console test message
+        print("Keyboard Frame 확인 : \(keyboardFrame)")
     }
 }
