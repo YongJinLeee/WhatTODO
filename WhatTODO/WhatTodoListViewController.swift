@@ -8,7 +8,6 @@
 import UIKit
 
 class WhatTodoListViewController: UIViewController {
-
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -19,25 +18,29 @@ class WhatTodoListViewController: UIViewController {
     @IBOutlet weak var isTodayBtn: UIButton!
     @IBOutlet weak var addTaskBtn: UIButton!
     
+    let WhatTodoListViewModel = WhatTodoViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
     // Task 추가 제거, Tab Bar Controller
-    
+    // BLG1
     @IBAction func addTaskBtnTapped(_ sender: Any) {
         // 없으면 void return
         guard let detail = inputTextField.text, detail.isEmpty == false else { return }
-        let todoText = ListManager.shared.createTodo(detailMSG: detail, isToday: isTodayBtn.isSelected)
+        let whatTodo = ListManager.shared.createTodo(detailMSG: detail, isToday: isTodayBtn.isSelected)
         
+        WhatTodoListViewModel.addTodo(whatTodo)
+        collectionView.reloadData()
+        // [해결] collection View reload 또는 update 기능 추가 필요..
         // task 업로드 후 텍스트 필드 초기화 및 today 버튼 초기화
         inputTextField.text = ""
-        isTodayBtn.isSelected == false
-        // collection View reload 또는 update 기능 추가 필요..
+        isTodayBtn.isSelected = false
         
     }
     
@@ -52,20 +55,18 @@ class WhatTodoListViewController: UIViewController {
         isTodayBtn.isSelected = !isTodayBtn.isSelected
     }
     
-    
-    
 }
 
 extension WhatTodoListViewController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         // 섹션 수 설정 - Today, UpComming
-        return 2
+        return WhatTodoListViewModel.numOfSection
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // 섹선 내 아이템 수 -> 생성하는 대로되도록
-        return 10 // 임시
+        return WhatTodoListViewModel.todaysTask.count
     }
     
     

@@ -102,7 +102,7 @@ class WhatTodoViewModel {
         return manager.tasks
     }
     
-    // isToday Bool 값에 따라 위치할 섹션 분할
+    // isToday Bool 값에 따라 위치할 섹션 분할, 섹션 내 아이템 개수 호출 용도
     var todaysTask: [TodoData] {
         return tasks.filter { $0.isToday == true }
     }
