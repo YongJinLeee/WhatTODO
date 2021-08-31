@@ -115,13 +115,62 @@
                                     </connections>
                                 </collectionReusableView>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Me-IC-lCq">
+                                <rect key="frame" x="0.0" y="753" width="414" height="60"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Todo...?" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SCi-d0-Gxh">
+                                        <rect key="frame" x="8" y="13" width="289" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0b-KS-GcG">
+                                        <rect key="frame" x="307" y="12.666666666666629" width="45" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="Coy-Ku-Sgo"/>
+                                            <constraint firstAttribute="width" constant="45" id="Whb-DR-p0n"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="systemGroupedBackgroundColor"/>
+                                        <state key="normal" title="Today">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <state key="selected">
+                                            <color key="titleColor" systemColor="systemPinkColor"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Tp-gE-yE5">
+                                        <rect key="frame" x="362" y="17.666666666666629" width="26" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="26" id="Xa6-cH-Uc4"/>
+                                            <constraint firstAttribute="height" constant="25" id="wLd-CP-C9y"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <state key="normal" image="plus" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24" weight="semibold"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="secondarySystemFillColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="9Tp-gE-yE5" secondAttribute="trailing" constant="26" id="0AU-TL-3tl"/>
+                                    <constraint firstItem="9Tp-gE-yE5" firstAttribute="centerY" secondItem="9Me-IC-lCq" secondAttribute="centerY" id="1WQ-hK-rgH"/>
+                                    <constraint firstItem="c0b-KS-GcG" firstAttribute="leading" secondItem="SCi-d0-Gxh" secondAttribute="trailing" constant="10" id="AQX-bH-h0V"/>
+                                    <constraint firstItem="c0b-KS-GcG" firstAttribute="centerY" secondItem="9Tp-gE-yE5" secondAttribute="centerY" id="UIx-OP-bZM"/>
+                                    <constraint firstItem="SCi-d0-Gxh" firstAttribute="leading" secondItem="9Me-IC-lCq" secondAttribute="leading" constant="8" id="Zxf-bL-NEK"/>
+                                    <constraint firstItem="9Tp-gE-yE5" firstAttribute="leading" secondItem="c0b-KS-GcG" secondAttribute="trailing" constant="10" id="c1a-Xg-CPD"/>
+                                    <constraint firstAttribute="height" constant="60" id="k1k-vn-kkN"/>
+                                    <constraint firstItem="SCi-d0-Gxh" firstAttribute="centerY" secondItem="9Me-IC-lCq" secondAttribute="centerY" id="zeI-nm-9ga"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="MbA-XL-dBD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5fV-h6-GhX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="MbA-XL-dBD" secondAttribute="bottom" id="8ZD-i1-H5G"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9Me-IC-lCq" secondAttribute="trailing" id="aCv-Jb-baY"/>
                             <constraint firstItem="MbA-XL-dBD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="i6G-U4-yjS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9Me-IC-lCq" secondAttribute="bottom" id="m7J-ea-9Nn"/>
+                            <constraint firstItem="9Me-IC-lCq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mmu-Ig-pfX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MbA-XL-dBD" secondAttribute="trailing" id="uVR-qq-RfM"/>
                         </constraints>
                     </view>
@@ -129,7 +178,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="35" y="790"/>
+            <point key="canvasLocation" x="34.782608695652179" y="789.50892857142856"/>
         </scene>
         <!--Settings-->
         <scene sceneID="5jR-zh-LX7">
@@ -212,6 +261,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="pOf-tq-JKe" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AQO-Qa-rK8">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="selectedImageTintColor" systemColor="systemPinkColor"/>
@@ -230,13 +280,23 @@
         <image name="checkmark.circle.fill" catalog="system" width="128" height="121"/>
         <image name="circle" catalog="system" width="128" height="121"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="square.and.pencil" catalog="system" width="128" height="115"/>
         <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondarySystemFillColor">
+            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
