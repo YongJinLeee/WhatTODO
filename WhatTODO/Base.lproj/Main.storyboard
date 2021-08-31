@@ -136,6 +136,9 @@
                                         <state key="selected">
                                             <color key="titleColor" systemColor="systemPinkColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="isTodayBtnToggle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ld5-bA-MZ8"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Tp-gE-yE5">
                                         <rect key="frame" x="362" y="17.666666666666629" width="26" height="25"/>
@@ -147,6 +150,9 @@
                                         <state key="normal" image="plus" catalog="system">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24" weight="semibold"/>
                                         </state>
+                                        <connections>
+                                            <action selector="addTaskBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Obp-1t-aDu"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="secondarySystemFillColor"/>
@@ -179,6 +185,7 @@
                         <outlet property="addTaskBtn" destination="9Tp-gE-yE5" id="368-xb-kd6"/>
                         <outlet property="collectionView" destination="MbA-XL-dBD" id="lIu-4E-Wwu"/>
                         <outlet property="inputTextField" destination="SCi-d0-Gxh" id="90u-dw-M1u"/>
+                        <outlet property="inputViewBottom" destination="8ZD-i1-H5G" id="lVE-Kj-5er"/>
                         <outlet property="isTodayBtn" destination="c0b-KS-GcG" id="bVb-XF-qi6"/>
                     </connections>
                 </viewController>

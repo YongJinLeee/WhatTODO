@@ -12,6 +12,9 @@ class WhatTodoListViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    // 키보드 디텍션 bottom 조절용 connection
+    @IBOutlet weak var inputViewBottom: NSLayoutConstraint!
+    
     @IBOutlet weak var inputTextField: UITextField!
     @IBOutlet weak var isTodayBtn: UIButton!
     @IBOutlet weak var addTaskBtn: UIButton!
@@ -25,6 +28,19 @@ class WhatTodoListViewController: UIViewController {
         super.viewDidAppear(animated)
     }
     // Task 추가 제거, Tab Bar Controller
+    
+    @IBAction func addTaskBtnTapped(_ sender: Any) {
+        // 없으면 void return
+        guard let detail = inputTextField.text, detail.isEmpty == false else { return }
+        let todoText = ListManager.shared.createTodo(detailMSG: detail, isToday: isTodayBtn.isSelected)
+        
+        // task 업로드 후 텍스트 필드 초기화 및 today 버튼 초기화
+        inputTextField.text = ""
+        isTodayBtn.isSelected == false
+        // collection View reload 또는 update 기능 추가 필요..
+        
+    }
+    
     // Data 관리 - NSCoding, Property List, Serialization, Core Data, Realm 등등
     // 적고 덜 복잡한 데이터 관리 -> NSCoding, Peroperty List
     // 많고 복잡한 데이터 관리 -> Core data, Realm
@@ -32,9 +48,15 @@ class WhatTodoListViewController: UIViewController {
     // 최근 사용 경향 Cadable(Swift4에 추가, NSCoding보다는 덜 복잡하고 더 직관적이며, JSON과 유사한 프로토콜 제공)
 
 
+    @IBAction func isTodayBtnToggle(_ sender: Any) {
+        isTodayBtn.isSelected = !isTodayBtn.isSelected
+    }
+    
+    
+    
 }
 
-extension WhatTodoListViewController {
+extension WhatTodoListViewController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         // 섹션 수 설정 - Today, UpComming
