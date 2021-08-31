@@ -61,6 +61,10 @@ class WhatTodoListViewController: UIViewController {
         isTodayBtn.isSelected = !isTodayBtn.isSelected
     }
     
+    // 백그라운드 탭으로 키보드 감추기
+    @IBAction func tapBackground(_ sender: Any) {
+        inputTextField.resignFirstResponder()
+    }
 }
 
 extension WhatTodoListViewController: UICollectionViewDataSource {

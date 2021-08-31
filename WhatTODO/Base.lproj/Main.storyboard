@@ -170,6 +170,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="MbA-XL-dBD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5fV-h6-GhX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="MbA-XL-dBD" secondAttribute="bottom" id="8ZD-i1-H5G"/>
@@ -179,6 +180,9 @@
                             <constraint firstItem="9Me-IC-lCq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mmu-Ig-pfX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MbA-XL-dBD" secondAttribute="trailing" id="uVR-qq-RfM"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Wbl-2c-3Ys" appends="YES" id="Aeb-3A-KvK"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Tasks" image="square.and.pencil" catalog="system" id="lXe-8R-cb6"/>
                     <connections>
@@ -190,6 +194,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Wbl-2c-3Ys">
+                    <connections>
+                        <action selector="tapBackground:" destination="BYZ-38-t0r" id="ZQa-ay-WVa"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="34.782608695652179" y="789.50892857142856"/>
         </scene>
