@@ -16,9 +16,9 @@
 		4C4B4AB626C6BDEC00AC6791 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C4B4AB426C6BDEC00AC6791 /* LaunchScreen.storyboard */; };
 		4C4B4AC126C6BDEC00AC6791 /* WhatTODOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4B4AC026C6BDEC00AC6791 /* WhatTODOTests.swift */; };
 		4C4B4ACC26C6BDEC00AC6791 /* WhatTODOUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4B4ACB26C6BDEC00AC6791 /* WhatTODOUITests.swift */; };
-		4C4B4ADA26CE514E00AC6791 /* WhatTodoListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4B4AD926CE514E00AC6791 /* WhatTodoListCell.swift */; };
 		4C4B4ADC26D5356D00AC6791 /* WhatTodo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4B4ADB26D5356D00AC6791 /* WhatTodo.swift */; };
 		4C4B4ADE26D68DCF00AC6791 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4B4ADD26D68DCF00AC6791 /* Storage.swift */; };
+		4CCDFB5826DF351500DE7673 /* WhatTodoListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDFB5726DF351500DE7673 /* WhatTodoListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,9 +54,9 @@
 		4C4B4AC726C6BDEC00AC6791 /* WhatTODOUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhatTODOUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C4B4ACB26C6BDEC00AC6791 /* WhatTODOUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatTODOUITests.swift; sourceTree = "<group>"; };
 		4C4B4ACD26C6BDEC00AC6791 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4C4B4AD926CE514E00AC6791 /* WhatTodoListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatTodoListCell.swift; sourceTree = "<group>"; };
 		4C4B4ADB26D5356D00AC6791 /* WhatTodo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatTodo.swift; sourceTree = "<group>"; };
 		4C4B4ADD26D68DCF00AC6791 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		4CCDFB5726DF351500DE7673 /* WhatTodoListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhatTodoListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +113,7 @@
 				4C4B4AAC26C6BDEA00AC6791 /* Main.storyboard */,
 				4C4B4AB226C6BDEC00AC6791 /* Assets.xcassets */,
 				4C4B4AB426C6BDEC00AC6791 /* LaunchScreen.storyboard */,
-				4C4B4AD926CE514E00AC6791 /* WhatTodoListCell.swift */,
+				4CCDFB5726DF351500DE7673 /* WhatTodoListCell.swift */,
 				4C4B4AB726C6BDEC00AC6791 /* Info.plist */,
 				4C4B4AAF26C6BDEA00AC6791 /* WhatTODO.xcdatamodeld */,
 				4C4B4ADB26D5356D00AC6791 /* WhatTodo.swift */,
@@ -270,12 +270,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CCDFB5826DF351500DE7673 /* WhatTodoListCell.swift in Sources */,
 				4C4B4AAB26C6BDEA00AC6791 /* WhatTodoListViewController.swift in Sources */,
 				4C4B4ADE26D68DCF00AC6791 /* Storage.swift in Sources */,
 				4C4B4AA726C6BDEA00AC6791 /* AppDelegate.swift in Sources */,
 				4C4B4AA926C6BDEA00AC6791 /* SceneDelegate.swift in Sources */,
 				4C4B4AB126C6BDEA00AC6791 /* WhatTODO.xcdatamodeld in Sources */,
-				4C4B4ADA26CE514E00AC6791 /* WhatTodoListCell.swift in Sources */,
 				4C4B4ADC26D5356D00AC6791 /* WhatTodo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
