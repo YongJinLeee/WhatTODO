@@ -47,13 +47,14 @@ class ListManager {
     // 신규 생성된 노드 Todo List에 추가
     func addTodo(_ task: TodoData) {
         tasks.append(task)
+        saveTodo()
     }
     
     // 선택 혹은 del버튼 눌린 노드 삭제 (del 핸들러에는 해당 노드 id가 전달되어야)
     func deleteTodo(_ task: TodoData) {
         // tasks의 배열에서 id 일치 하지 않는 노드만 추려 배열 재구성
         tasks = tasks.filter { $0.id != task.id }
-        
+        saveTodo()
 //        tasks = tasks.filter { existingTodo in
 //            return existingTodo.id != task.id
 //        }
@@ -64,6 +65,7 @@ class ListManager {
     func updateTodo(_ task: TodoData) {
         guard let index = tasks.firstIndex(of: task) else { return }
         tasks[index].DataUpdate(isDone: false, detailMSG: task.detailMSG, isToday: task.isToday)
+        saveTodo()
     }
     
     // 업데이트된 구조체 Directory화 및 json 파일 저장
