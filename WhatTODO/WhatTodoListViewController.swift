@@ -34,7 +34,7 @@ class WhatTodoListViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
-    // Task 추가 제거, Tab Bar Controller
+    // Task 추가 제거
     // BLG1
     @IBAction func addTaskBtnTapped(_ sender: Any) {
         // 없으면 void return
@@ -55,8 +55,7 @@ class WhatTodoListViewController: UIViewController {
     // 많고 복잡한 데이터 관리 -> Core data, Realm
     
     // 최근 사용 경향 Cadable(Swift4에 추가, NSCoding보다는 덜 복잡하고 더 직관적이며, JSON과 유사한 프로토콜 제공)
-
-
+    
     @IBAction func isTodayBtnToggle(_ sender: Any) {
         isTodayBtn.isSelected = !isTodayBtn.isSelected
     }
@@ -77,13 +76,12 @@ extension WhatTodoListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // 섹선 내 아이템 수 -> 생성하는 대로되도록
         if section == 0 {
-            // 첫 번째 섹션 내 아이템 수 (0번)
+            // 첫 번째 섹션 내 아이템 수
             return WhatTodoListViewModel.todaysTask.count
         } else {
             return WhatTodoListViewModel.upcomingTasks.count
         }
         // 개선점 : 추후 섹션을 더 분리할 수 있는 기능을 추가하면 수정 필요함
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -117,7 +115,7 @@ extension WhatTodoListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch kind {
         case UICollectionView.elementKindSectionHeader:
-            guard let header =  collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "WhatTodoListHeaderView", for: indexPath) as? WhatTodoListHeaderView else {
+            guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "WhatTodoListHeaderView", for: indexPath) as? WhatTodoListHeaderView else {
                 return UICollectionReusableView()
             }
             
@@ -145,13 +143,9 @@ extension WhatTodoListViewController: UICollectionViewDelegateFlowLayout {
 // 키보드 감지 및 키보드 높이에 따른 텍스트 필드 인풋뷰 높이 조절 관련
 extension WhatTodoListViewController {
     @objc private func adjstInputView(notify: Notification) {
-        guard let userInfo = notify.userInfo else {
-            return
-        }
+        guard let userInfo = notify.userInfo else { return }
         // 키보드 올라 왔을때 위치와 사이즈 정보 받기
-        guard let keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
-            return
-        }
+        guard let keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
         
         if notify.name == UIResponder.keyboardWillShowNotification {
             //노치 인셋
@@ -162,5 +156,15 @@ extension WhatTodoListViewController {
         }
         //console test message
         print("Keyboard Frame 확인 : \(keyboardFrame)")
+    }
+}
+
+// section분할시마다 Object사용을 위한 ReusableView class
+class WhatTodoListHeaderView: UICollectionReusableView {
+    
+    @IBOutlet weak var sectionTitleLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
     }
 }
