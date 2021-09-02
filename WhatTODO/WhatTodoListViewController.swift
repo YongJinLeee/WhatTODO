@@ -34,6 +34,7 @@ class WhatTodoListViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
+    
     // Task 추가 제거
     // BLG1
     @IBAction func addTaskBtnTapped(_ sender: Any) {
@@ -66,6 +67,25 @@ class WhatTodoListViewController: UIViewController {
     }
 }
 
+// 키보드 감지 및 키보드 높이에 따른 텍스트 필드 인풋뷰 높이 조절 관련
+extension WhatTodoListViewController {
+    @objc private func adjstInputView(notify: Notification) {
+        guard let userInfo = notify.userInfo else { return }
+        // 키보드 올라 왔을때 위치와 사이즈 정보 받기
+        guard let keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
+        
+        if notify.name == UIResponder.keyboardWillShowNotification {
+            //노치 인셋
+            let adjustmentHeight = keyboardFrame.height - view.safeAreaInsets.bottom
+            inputViewBottom.constant = adjustmentHeight
+        } else {
+            inputViewBottom.constant = 0
+        }
+        //console test message
+        print("Keyboard Frame 확인 : \(keyboardFrame)")
+    }
+}
+
 extension WhatTodoListViewController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -89,6 +109,7 @@ extension WhatTodoListViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WhatTodoListCell", for: indexPath) as? WhatTodoListCell else {
             return UICollectionViewCell()
         }
+        
         var tasks: TodoData
         if indexPath.section == 0 {
             tasks = WhatTodoListViewModel.todaysTask[indexPath.item]
@@ -98,7 +119,8 @@ extension WhatTodoListViewController: UICollectionViewDataSource {
         // 셀 정보 업데이트
         cell.updateUI(task: tasks)
         
-        cell.doneBtnTapHandler = { isdone in tasks.isDone = isdone
+        cell.doneBtnTapHandler = { isdone in
+            tasks.isDone = isdone
             self.WhatTodoListViewModel.updateTodo(tasks)
             self.collectionView.reloadData()
         }
@@ -140,25 +162,6 @@ extension WhatTodoListViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-// 키보드 감지 및 키보드 높이에 따른 텍스트 필드 인풋뷰 높이 조절 관련
-extension WhatTodoListViewController {
-    @objc private func adjstInputView(notify: Notification) {
-        guard let userInfo = notify.userInfo else { return }
-        // 키보드 올라 왔을때 위치와 사이즈 정보 받기
-        guard let keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
-        
-        if notify.name == UIResponder.keyboardWillShowNotification {
-            //노치 인셋
-            let adjustmentHeight = keyboardFrame.height - view.safeAreaInsets.bottom
-            inputViewBottom.constant = adjustmentHeight
-        } else {
-            inputViewBottom.constant = 0
-        }
-        //console test message
-        print("Keyboard Frame 확인 : \(keyboardFrame)")
-    }
-}
-
 // section분할시마다 Object사용을 위한 ReusableView class
 class WhatTodoListHeaderView: UICollectionReusableView {
     
@@ -168,3 +171,4 @@ class WhatTodoListHeaderView: UICollectionReusableView {
         super.awakeFromNib()
     }
 }
+
