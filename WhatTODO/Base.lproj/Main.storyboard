@@ -47,7 +47,7 @@
                                                     </state>
                                                     <state key="selected" image="checkmark.circle.fill" catalog="system"/>
                                                     <connections>
-                                                        <action selector="checkBtnToggle:" destination="RTO-8W-3Ak" eventType="touchUpInside" id="Mx0-TR-Q3r"/>
+                                                        <action selector="checkBtnToggle:" destination="RTO-8W-3Ak" eventType="touchUpInside" id="6av-G2-m3N"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="뷰야 보여라!!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tty-5k-fFd">
@@ -62,11 +62,12 @@
                                                         <constraint firstAttribute="width" constant="35" id="Oib-TP-kai"/>
                                                         <constraint firstAttribute="height" constant="35" id="fSX-QR-vpR"/>
                                                     </constraints>
+                                                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <state key="normal" image="xmark.circle.fill" catalog="system">
                                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="deleteBtnTapped:" destination="RTO-8W-3Ak" eventType="touchUpInside" id="RHo-wm-X7q"/>
+                                                        <action selector="deleteBtnTapped:" destination="RTO-8W-3Ak" eventType="touchUpInside" id="ijG-vR-bwA"/>
                                                     </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9k8-YK-QXF">
@@ -92,11 +93,11 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="414" height="90"/>
                                         <connections>
-                                            <outlet property="cancelLineThroughView" destination="9k8-YK-QXF" id="FZc-jV-t6a"/>
+                                            <outlet property="cancelLineThroughView" destination="9k8-YK-QXF" id="syS-Rq-qop"/>
                                             <outlet property="cancelLineThroughWidth" destination="fd4-jm-DZv" id="Sm7-AW-BcV"/>
-                                            <outlet property="checkIcon" destination="I9Q-PG-D0M" id="0cK-Cp-wuN"/>
+                                            <outlet property="checkIcon" destination="I9Q-PG-D0M" id="TDw-4o-e2k"/>
                                             <outlet property="deleteButton" destination="5NU-dR-LK9" id="eab-9v-GYc"/>
-                                            <outlet property="descriptionsLabel" destination="Tty-5k-fFd" id="xjd-UV-igg"/>
+                                            <outlet property="descriptionsLabel" destination="Tty-5k-fFd" id="VXq-hy-Let"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
