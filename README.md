@@ -30,7 +30,7 @@ Text Field가 있는 Input View도 키보드 프레임의 높이에 따라 Botto
 
 
 ---------------
-
+키보드 관련
 
 ![스크린샷 2021-09-02 21 37 29](https://user-images.githubusercontent.com/40759743/131844694-17ccfac9-c19e-4f2f-962a-ed6e72e8464b.png)
 
