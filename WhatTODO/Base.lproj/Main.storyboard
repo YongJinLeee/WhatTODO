@@ -164,7 +164,8 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="secondarySystemFillColor"/>
+                                <color key="backgroundColor" systemColor="tertiarySystemFillColor"/>
+                                <color key="tintColor" systemColor="secondarySystemFillColor"/>
                                 <constraints>
                                     <constraint firstItem="SCi-d0-Gxh" firstAttribute="leading" secondItem="9Me-IC-lCq" secondAttribute="leading" constant="8" id="I2f-qQ-xfu"/>
                                     <constraint firstItem="9Tp-gE-yE5" firstAttribute="centerY" secondItem="9Me-IC-lCq" secondAttribute="centerY" id="UwZ-R9-zbc"/>
@@ -329,6 +330,9 @@
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiarySystemFillColor">
+            <color red="0.46274509803921571" green="0.46274509803921571" blue="0.50196078431372548" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
