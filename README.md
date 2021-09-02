@@ -14,12 +14,28 @@ Data 관리 - NSCoding, Property List, Serialization, Core Data, Realm 등등
 데이터 관리는 JSON으로
 codable protocol은 https://babbab2.tistory.com/61 에서 참고하여 구성했습니다.
 
+-----------
+210902
+
+컬렉션 뷰가 뜨지 않는 것은 이렇게 delegate와 data를 연결하지 않아서...(하...)였다.
+
+기초적인 실수를 한 것 같아 자책을 했지만? 다음부터 그르즈믈흐으지..🤗
+
+
+![스크린샷 2021-09-02 21 57 26](https://user-images.githubusercontent.com/40759743/131847602-e866e2a4-a3b8-4093-a492-ebc00caa655f.png)
+
+View는 여전히 말썽이다. 키보드도 해결이 안되었고 cell 내 컨텐츠들의 정렬도 중구난방이다. 
+
+Auto Layout을 다시 설정하고, action 관련 delegate도 확인필요.
+
+![스크린샷 2021-09-02 21 55 47](https://user-images.githubusercontent.com/40759743/131847429-9a1e7b12-2d1c-4cc4-a4ee-e563db7eda28.png)
+
 
 ---------
 
 210831
 
-아래와같이 컬렉션 뷰 부분만 뜨지 않아 Storyboard내 objcet간 위상차 문제인가 싶어 이것저것 설정도 건들고, 뷰를 아예 새로 구성하기도 하는 삽질을 했는데 여전히 해결을 못했다.
+아래와같이 컬렉션 뷰 부분만 뜨지 않아 Storyboard내 objcet간 위상차 문제인가 싶어 이것저것 설정도 건들고, 뷰를 아예 새로 구성하기도 하기도 했는데 여전히 해결을 못했다.
 
 
 Text Field가 있는 Input View도 키보드 프레임의 높이에 따라 Bottom 사이즈가 변동되도록 구현을 했는데 코드가 작동하지 않고 여전히 뷰를 덮어버린다..컬렉션뷰가 호출되지 않은 것 때문인지..?
