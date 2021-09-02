@@ -56,7 +56,7 @@ class WhatTodoListCell: UICollectionViewCell {
         showCancelLine(false)
     }
     
-    func checkBtnToggle(_ sender: Any) {
+   @IBAction func checkBtnToggle(_ sender: Any) {
         checkIcon.isSelected = !checkIcon.isSelected
         //view 조정
         let isDone = checkIcon.isSelected
@@ -68,7 +68,7 @@ class WhatTodoListCell: UICollectionViewCell {
         // Business Logic과 분리하기 위함
         doneBtnTapHandler?(isDone)
     }
-    func deleteBtnTapped(_ sender: Any) {
+    @IBAction func deleteBtnTapped(_ sender: Any) {
         // 탭이 되었다는 사실만 핸들러에 담고, 실제 연산(Business Logic)은 외부에서 이루어지도록 구현
         delBtnTapHandler?()
     }
