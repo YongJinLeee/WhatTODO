@@ -14,6 +14,21 @@ Data 관리 - NSCoding, Property List, Serialization, Core Data, Realm 등등
 데이터 관리는 JSON으로
 codable protocol은 https://babbab2.tistory.com/61 에서 참고하여 구성했습니다.
 
+-------------
+210903
+
+1.키보드 높이에 따라 Input View 위치를 변경하는 것은 해결되었다.
+Main View 전체 높이가 safe area에 연동되어 auto layout이 설정되어있었던 것이 문제였다. 해당 부분을 삭제함으로서 해결되었다.
+
+2. cell 재사용은 한칸 한칸 동일한 길이의 width가 설정되어야 하는데 그것이 빠졌는지 Label 안에 들어가는 텍스트의 길이에 따라 중구난방으로 셀 크기가 결정된다.
+
+해결해야지..
+
+![스크린샷 2021-09-03 19 42 23](https://user-images.githubusercontent.com/40759743/131993182-7d93ef90-16a4-441b-9f7e-760fe13328b7.png)
+
+
+
+
 -----------
 210902
 
