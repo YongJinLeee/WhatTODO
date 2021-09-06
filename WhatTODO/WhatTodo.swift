@@ -64,7 +64,7 @@ class ListManager {
     // 배열에 새로운 index 감지되면 구조체 업데이트
     func updateTodo(_ task: TodoData) {
         guard let index = tasks.firstIndex(of: task) else { return }
-        tasks[index].DataUpdate(isDone: false, detailMSG: task.detailMSG, isToday: task.isToday)
+        tasks[index].DataUpdate(isDone: task.isDone, detailMSG: task.detailMSG, isToday: task.isToday)
         saveTodo()
     }
     
