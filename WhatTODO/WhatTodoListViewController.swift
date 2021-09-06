@@ -34,7 +34,7 @@ class WhatTodoListViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
-    
+    // 작동확인
     // Task 추가 제거
     // BLG1
     @IBAction func addTaskBtnTapped(_ sender: Any) {
@@ -57,6 +57,7 @@ class WhatTodoListViewController: UIViewController {
     
     // 최근 사용 경향 Cadable(Swift4에 추가, NSCoding보다는 덜 복잡하고 더 직관적이며, JSON과 유사한 프로토콜 제공)
     
+    // BLG2 - 작동 확인
     @IBAction func isTodayBtnToggle(_ sender: Any) {
         isTodayBtn.isSelected = !isTodayBtn.isSelected
     }
