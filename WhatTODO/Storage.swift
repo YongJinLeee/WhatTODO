@@ -78,7 +78,7 @@ public class Storage {
             let model = try decoder.decode(type, from: data)
             return model
         } catch let error {
-            print("파일 파싱에 실패했습니다(Failed of decode). error: \(error.localizedDescription)")
+            print("파일 디코딩에 실패했습니다(Failed of decode). error: \(error.localizedDescription)")
             return nil
         }
     }
