@@ -15,7 +15,7 @@ struct TodoData: Codable, Equatable {
     var detailMSG: String // description comment
     var isToday: Bool // 기일 도래 여부
     
-    // 값 변화 감지 함수
+    // 값 변화 감지 함수(cell update Logic)
     mutating func DataUpdate(isDone: Bool, detailMSG: String, isToday: Bool) {
         self.isDone = isDone
         self.detailMSG = detailMSG
@@ -75,7 +75,7 @@ class ListManager {
     
     // 저장된 파일 불러오기 (앱 재시작, 백그라운드에서 재시작 등 다시 호출 할 상황)
     func retriveTodo() {
-       tasks = Storage.retrive("tasks.json", from: .caches, as: [TodoData].self) ?? []
+       tasks = Storage.retrive("tasks.json", from: .documents, as: [TodoData].self) ?? []
         
         let lastId =  tasks.last?.id ?? 0
         ListManager.lastId = lastId
