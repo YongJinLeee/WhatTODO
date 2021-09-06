@@ -15,12 +15,24 @@ Data 관리 - NSCoding, Property List, Serialization, Core Data, Realm 등등
 codable protocol은 https://babbab2.tistory.com/61 에서 참고하여 구성했습니다.
 
 -------------
+210905
+Tasks storyboard의 collectionViewCell을 재구성해 아래와 같이 한 개의 컨텐츠가 한개의 셀에 들어가고, 왼쪽 정렬로 재사용되도록 설정함.
+
+<img width="210" alt="스크린샷 2021-09-06 20 08 29" src="https://user-images.githubusercontent.com/40759743/132208512-ba57fe85-da41-40ed-9b38-9e080561cae2.png">
+
+1. JSON encoding 모듈은 구동이 잘되는데 decode에 문제가 있는지 정보를 불러오지 못한다.
+2. Check Icon 토글이 동작하지 않는 이유도 그 때문인 것 같다.
+3. check Icon 토글에 변화가 없다면 뒤에 연쇄적으로 따라오는 취소선과 삭제버튼 플로우까지 가지 못하므로 해당문제 우선적으로 고칠 것. 
+
+
+-------------
 210903
 
 1.키보드 높이에 따라 Input View 위치를 변경하는 것은 해결되었다.
 Main View 전체 높이가 safe area에 연동되어 auto layout이 설정되어있었던 것이 문제였다. 해당 부분을 삭제함으로서 해결되었다.
 
-2. cell 재사용은 한칸 한칸 동일한 길이의 width가 설정되어야 하는데 그것이 빠졌는지 Label 안에 들어가는 텍스트의 길이에 따라 중구난방으로 셀 크기가 결정된다.
+~~2. cell 재사용은 한칸 한칸 동일한 길이의 width가 설정되어야 하는데 그것이 빠졌는지 Label 안에 들어가는 텍스트의 길이에 따라 중구난방으로 셀 크기가 결정된다.
+해결! 
 
 해결해야지..
 
