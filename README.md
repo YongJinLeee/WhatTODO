@@ -15,7 +15,7 @@ Data 관리 - NSCoding, Property List, Serialization, Core Data, Realm 등등
 codable protocol은 https://babbab2.tistory.com/61 에서 참고하여 구성했습니다.
 
 --------------
-210906 - 앱 완성, 고찰 작성중..
+210906 - 앱 완성(96%), 고찰 작성중..
 
 아래 1~3번 문제 전부 해결
 
