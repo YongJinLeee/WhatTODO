@@ -14,6 +14,18 @@ Data 관리 - NSCoding, Property List, Serialization, Core Data, Realm 등등
 데이터 관리는 JSON으로
 codable protocol은 https://babbab2.tistory.com/61 에서 참고하여 구성했습니다.
 
+-------------
+
+210909 
+
+1. 삭제버튼 동작하지 않던 오류 수정
+> 커스텀 cell 호출 때 delBtnTapHandler가 아니라 버튼 자체의 IBAction 함수(deleteBtnTapped)를 사용하는 바람에 삭제요청이 제대로 돌지 않던 오류..
+
+2. 취소선 View의 width가 cell 마다 제각기 달라지는 오류 발견
+
+
+![스크린샷 2021-09-10 00 42 07](https://user-images.githubusercontent.com/40759743/132718275-0d11ff02-2353-4cf3-ae4d-e0da810ec46a.png)
+
 --------------
 210906 - 앱 완성(96%), 고찰 작성중..
 
