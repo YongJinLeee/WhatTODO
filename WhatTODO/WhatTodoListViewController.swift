@@ -126,7 +126,7 @@ extension WhatTodoListViewController: UICollectionViewDataSource {
             self.collectionView.reloadData()
         }
         
-        cell.deleteBtnTapped {
+        cell.delBtnTapHandler = {
             self.WhatTodoListViewModel.deleteTodo(tasks)
             self.collectionView.reloadData()
         }
