@@ -4,7 +4,7 @@
 
 
 ```
-Task 추가 제거, Tab Bar Controller
+Task 추가 제거, Tab Bar Controller(2 tap)
 Data 관리 - NSCoding, Property List, Serialization, Core Data, Realm 등등
 적고 단순한 데이터 관리 -> NSCoding, Peroperty List
 많고 복잡한 데이터 관리 -> Coredata, Realm
