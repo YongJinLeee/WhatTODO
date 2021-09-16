@@ -35,7 +35,8 @@ codable protocol은 https://babbab2.tistory.com/61 에서 참고하여 구성했
 
 1. decoding issue
 > ListManager class의 Method 중 앱을 retrive하는 코드에 문제가 있었다. storage class의 decode 함수는 잘 동작하고 있었는데 아래와 같이 retriveTodo의 decode 파라미터 중 파일 디렉토리가 .cache로 되어있어 앱 종료, 백그라운드 전환에 대응하지 못하고 있었다.
-~~~
+
+~~~Swift
 func saveTasks() {
         Storage.store(tasks, to: .documents, as: "tasks.json")
     }
@@ -51,7 +52,7 @@ func retriveTasks() {
 
 2. check Toggle
 > 이것도 값 지정 오류 
-~~~
+~~~Swift
 cell.doneBtnTapHandler = { isdone in
             tasks.isDone = isdone
             self.WhatTodoListViewModel.updateTodo(tasks)
@@ -60,12 +61,14 @@ cell.doneBtnTapHandler = { isdone in
 ~~~
 console에서는 정상적으로 값이 저장/삭제 되고 있는데 object의 변화가 없다는 것은 핸들러의 문제라고 생각해 뷰모델을 업데이트하는 ListManager의 updateTodo method를 다시확인해보니
 
-~~~ tasks View 상태 업데이트 함수
+###### tasks View 상태 업데이트 함수
+~~~Swift
 tasks[index].DataUpdate(isDone: false, detailMSG: task.detailMSG, isToday: task.isToday)
 ~~~
 완료 여부를 판별하는 Bool type 변수 isDone을 false로 설정해놔 계속 완료되지 않음으로 정보가 넘어가고 있었다.
 > 해당부분을 TodoData 타입 프로퍼티 tasks의 .isDone 정보를 가져오도록 변경
-~~~
+
+~~~Swift
 tasks[index].DataUpdate(isDone: task.isDone, detailMSG: task.detailMSG, isToday: task.isToday)
 ~~~
 
@@ -134,7 +137,7 @@ Text Field가 있는 Input View도 키보드 프레임의 높이에 따라 Botto
 키보드 관련
 키보드 높이 -> 유니버설 앱, 기기별 사이즈 때문에 시스템에서 키보드 프레임 정보를 받아와 진행하도록 함
 
-```
+```Swift
  @objc private func adjstInputView(notify: Notification) {
         guard let userInfo = notify.userInfo else { return }
         // 키보드 올라 왔을때 위치와 사이즈 정보 받기
